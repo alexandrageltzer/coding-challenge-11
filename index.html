@@ -61,7 +61,14 @@
             .transition()
             .duration(1000)
             .attr("width", d => xScale(d));
-        
+        <!-- Hover effects -->
+        svg.selectAll(".bar")
+            .on("mouseover", function() {
+                d3.select(this).style("fill", "orange");
+            })
+            .on("mouseout", function() {
+                d3.select(this).style("fill", "steelblue");
+        });
     </script>
 </body>
 </html>
